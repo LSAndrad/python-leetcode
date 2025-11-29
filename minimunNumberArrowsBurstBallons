@@ -1,0 +1,28 @@
+
+
+def minumNumberArrowsBurstBallons(ballons):
+
+    #edge:
+    if not ballons:
+        return 0
+    #ordenar os ballons
+    ballons.sort(key = lambda x: x[1])
+
+    arrows = 1
+    last_arrow_position = ballons[0][1]
+    for ballon in ballons[1:]:
+        if ballon[0] > last_arrow_position:
+            arrows += 1
+            last_arrow_position = ballon[1]
+    
+    return arrows
+
+
+
+
+
+    return ballons
+
+ballons = [[10,16],[2,8],[1,6],[7,12]]
+
+print(minumNumberArrowsBurstBallons(ballons))
